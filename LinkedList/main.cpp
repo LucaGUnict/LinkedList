@@ -81,7 +81,7 @@ template <typename T>
 T& LinkedList<T>::operator[](int index) {
     auto it = begin();
     for (int i = 0; i < index; i++)
-        it++;
+        it=it->next;
     return it->key;
 }
 
@@ -168,6 +168,7 @@ int main () {
     list.push_back(5);
     list.push_back(6);
     list.push_back(7);
-    cout << list << endl;
+    cout << list[5] << endl;
+    list[0] = 6;
     return 0;
 }
